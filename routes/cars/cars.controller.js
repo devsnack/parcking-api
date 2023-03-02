@@ -7,8 +7,8 @@ let db = client.db("cartana").collection("voitures");
 async function addCr(req, res) {
   try {
     const { file } = req;
-    const data = ({ vname, immat, lch, compteur, nserie, datea } = req.body);
-    data.lch = JSON.parse(data.lch);
+    const data = ({ vname, immat, compteur, nserie, datea } = req.body);
+    //data.lch = JSON.parse(data.lch);
     // parse chauffeur license
     data.file = file.filename;
     await db.insertOne(data);
